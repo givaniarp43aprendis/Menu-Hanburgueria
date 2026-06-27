@@ -300,6 +300,7 @@ footer .copy{
     
         width: 100%;              /* Botão "Peça Agora" ocupa a largura inteira no celular */
         max-width: 250px;
+        background-color: #ffffff
     }
 
     /* 2. ARRUMANDO A SEÇÃO HERO (TEXTO + IMAGEM DO INÍCIO) */
