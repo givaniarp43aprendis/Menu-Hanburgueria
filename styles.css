@@ -279,6 +279,7 @@ footer .copy{
         position: fixed;
     top: 0;
     left: 0;
+    width: 100%;
         flex-direction: column;   /* Empilha Logo, Menu e Botão verticalmente */
         gap: 15px;
         padding: 15px 10px;
