@@ -256,3 +256,43 @@ footer .copy{
     grid-column: 1/-1;
     text-align: center;
 }
+/* Configurações exclusivas para Celulares */
+@media (max-width: 768px) {
+    
+    /* 1. Ajuste do Container Principal */
+    .container, body {
+        padding: 10px;
+        width: 100%;
+    }
+
+    /* 2. Menu/Grid de Hambúrgueres */
+    /* Se você usou Grid ou Flexbox para listar os itens do menu, 
+       forçamos eles a ficarem em uma única coluna */
+    .menu-grid, .itens-cardapio {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    /* 3. Ajuste dos Cards de Hambúrguer */
+    .card-item {
+        width: 100%;       /* O card ocupa quase toda a largura da tela */
+        max-width: 350px;  /* Evita que ele estique demais em telas levemente maiores */
+    }
+
+    /* 4. Imagens Responsivas */
+    .card-item img {
+        width: 100%;
+        height: auto;      /* Mantém a proporção da foto do hambúrguer */
+    }
+
+    /* 5. Tipografia (Fontes) */
+    h1 {
+        font-size: 24px;   /* Diminui o título principal para não quebrar linhas bizarramente */
+    }
+    
+    h2 {
+        font-size: 20px;
+    }
+}
