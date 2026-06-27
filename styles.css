@@ -270,44 +270,99 @@ footer .copy{
         width: 100%;
     }
 
-    /* 2. Menu/Grid de Hambúrgueres */
-    /* Se você usou Grid ou Flexbox para listar os itens do menu, 
-       forçamos eles a ficarem em uma única coluna */
-
-
     
-    /* Ajustando o container principal do Header */
-    header, .header-container {
-        flex-direction: column;   /* Empilha os elementos (Logo em cima, menu embaixo) */
-        text-align: center;       /* Centraliza os textos */
-        padding: 20px 10px;       /* Dá um espaçamento interno para não colar nas bordas */
-        gap: 15px;                /* Cria uma distância entre a logo e os links */
-        height: auto;             /* Se o seu header tinha altura fixa (ex: height: 80px), mude para auto */
+
+
+@media (max-width: 768px) {
+    
+    /* 1. ARRUMANDO O HEADER */
+    header {
+        flex-direction: column;   /* Empilha Logo, Menu e Botão verticalmente */
+        gap: 15px;
+        padding: 15px 10px;
+        text-align: center;
+        height: auto;             /* Garante que o fundo acompanhe o tamanho dos itens */
     }
 
-    /* Ajustando a lista de links/navegação (se houver) */
-    header nav ul {
-        flex-direction: column;   /* Empilha os links da hamburgueria (Home, Menu, Contato) */
+    header nav {
+        display: flex;
+        flex-wrap: wrap;          /* Se os links forem grandes, eles quebram linha suavemente */
+        justify-content: center;
+        gap: 12px;
+    }
+
+    header .btn {
+        width: 100%;              /* Botão "Peça Agora" ocupa a largura inteira no celular */
+        max-width: 250px;
+    }
+
+    /* 2. ARRUMANDO A SEÇÃO HERO (TEXTO + IMAGEM DO INÍCIO) */
+    .hero {
+        display: flex;
+        flex-direction: column-reverse; /* Inverte a ordem: a Imagem fica em cima e o texto embaixo */
+        align-items: center;
+        text-align: center;
+        padding: 20px 15px;
+        gap: 25px;
+    }
+
+    /* Forçando a imagem a aparecer e ser totalmente responsiva */
+    .hero img {
+        display: block !important; /* Garante que nenhuma regra oculte a imagem */
+        width: 100% !important;    /* Ocupa a largura disponível no celular */
+        max-width: 320px !important; /* Limita o tamanho máximo para não distorcer */
+        height: auto !important;   /* Mantém a proporção correta sem achatar o hambúrguer */
+        border-radius: 20px;       /* Mantém as bordas arredondadas bonitas da sua foto */
+        margin: 0 auto;
+    }
+
+    /* Ajustando os textos do topo */
+    .hero h1 {
+        font-size: 28px;           /* Diminui o título para caber na tela do celular */
+        line-height: 1.2;
+        margin-bottom: 10px;
+    }
+
+    .hero p {
+        font-size: 16px;
+        padding: 0 10px;
+    }
+
+    /* Botões "Ver Cardápio" e "WhatsApp" */
+    .hero-buttons {
+        display: flex;
+        flex-direction: column;    /* Empilha os dois botões no celular */
         width: 100%;
-        padding: 0;
-        gap: 10px;                /* Espaço entre um link e outro */
+        gap: 10px;
+        align-items: center;
+        margin-top: 15px;
     }
 
-    /* Ajustando os links individuais */
-    header nav ul li a {
-        display: block;
-        padding: 10px;            /* Fica mais fácil de clicar com o dedão no celular */
-        font-size: 18px;          /* Ajusta o tamanho da fonte */
+    .hero-buttons .btn {
+        width: 100%;
+        max-width: 280px;          /* Deixa os botões com tamanhos idênticos e fáceis de clicar */
+        text-align: center;
+    }
+
+    /* Ajustando as estatísticas (+500 Clientes, 4.9, etc) */
+    .hero-stats {
+        flex-direction: column;    /* Empilha as informações de entrega e avaliação */
+        gap: 15px;
+        align-items: center;
+        padding: 0;
+        margin-top: 25px;
     }
     
-    /* Se você tiver um botão de "Faça seu Pedido" ou ícone de carrinho no header */
-    .header-btn, .btn-pedido {
-        width: 100%;              /* O botão ocupa a largura disponível para facilitar o clique */
-        max-width: 280px;         /* Mas não deixa ele esticar infinitamente */
-        margin: 0 auto;           /* Centraliza o botão */
+    .hero-stats li {
+        text-align: center;
     }
 
-
+    /* Remove aquela div que você usou como separador estático no HTML */
+    .hero-stats div {
+        display: none; 
+    }
+}
+    
 
 
     .menu-grid, .itens-cardapio {
