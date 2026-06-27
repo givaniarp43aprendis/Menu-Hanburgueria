@@ -294,12 +294,12 @@ footer .copy{
 
     header .btn {
          position: fixed;
-    top: 10px;
+    top: 0;
     left: 0;
     z-index: 1000;
     
         width: 100%;              /* Botão "Peça Agora" ocupa a largura inteira no celular */
-        max-width: 250px;
+        max-width: 100px;
         background-color: #ffffff
     }
 
