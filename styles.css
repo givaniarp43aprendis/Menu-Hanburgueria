@@ -274,7 +274,7 @@ footer .copy{
     /* Se você usou Grid ou Flexbox para listar os itens do menu, 
        forçamos eles a ficarem em uma única coluna */
 
-@media (max-width: 768px) {
+
     
     /* Ajustando o container principal do Header */
     header, .header-container {
@@ -306,7 +306,7 @@ footer .copy{
         max-width: 280px;         /* Mas não deixa ele esticar infinitamente */
         margin: 0 auto;           /* Centraliza o botão */
     }
-}
+
 
 
 
