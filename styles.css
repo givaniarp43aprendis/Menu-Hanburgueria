@@ -259,6 +259,11 @@ footer .copy{
 /* Configurações exclusivas para Celulares */
 @media (max-width: 768px) {
     
+    
+    
+    
+    
+    
     /* 1. Ajuste do Container Principal */
     .container, body {
         padding: 10px;
@@ -268,6 +273,43 @@ footer .copy{
     /* 2. Menu/Grid de Hambúrgueres */
     /* Se você usou Grid ou Flexbox para listar os itens do menu, 
        forçamos eles a ficarem em uma única coluna */
+
+@media (max-width: 768px) {
+    
+    /* Ajustando o container principal do Header */
+    header, .header-container {
+        flex-direction: column;   /* Empilha os elementos (Logo em cima, menu embaixo) */
+        text-align: center;       /* Centraliza os textos */
+        padding: 20px 10px;       /* Dá um espaçamento interno para não colar nas bordas */
+        gap: 15px;                /* Cria uma distância entre a logo e os links */
+        height: auto;             /* Se o seu header tinha altura fixa (ex: height: 80px), mude para auto */
+    }
+
+    /* Ajustando a lista de links/navegação (se houver) */
+    header nav ul {
+        flex-direction: column;   /* Empilha os links da hamburgueria (Home, Menu, Contato) */
+        width: 100%;
+        padding: 0;
+        gap: 10px;                /* Espaço entre um link e outro */
+    }
+
+    /* Ajustando os links individuais */
+    header nav ul li a {
+        display: block;
+        padding: 10px;            /* Fica mais fácil de clicar com o dedão no celular */
+        font-size: 18px;          /* Ajusta o tamanho da fonte */
+    }
+    
+    /* Se você tiver um botão de "Faça seu Pedido" ou ícone de carrinho no header */
+    .header-btn, .btn-pedido {
+        width: 100%;              /* O botão ocupa a largura disponível para facilitar o clique */
+        max-width: 280px;         /* Mas não deixa ele esticar infinitamente */
+        margin: 0 auto;           /* Centraliza o botão */
+    }
+}
+
+
+
     .menu-grid, .itens-cardapio {
         display: flex;
         flex-direction: column;
