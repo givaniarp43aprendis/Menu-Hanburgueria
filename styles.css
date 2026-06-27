@@ -256,76 +256,86 @@ footer .copy{
     grid-column: 1/-1;
     text-align: center;
 }
-/* Configurações exclusivas para Celulares */
+
 @media (max-width: 650px) {
     
-    
-    
-    
-    
-    
-    /* 1. Ajuste do Container Principal */
+    /* 1. Ajuste do Container Principal e Body */
     .container, body {
         padding: 10px;
         width: 100%;
     }
 
-    
-
-
-    
-    /* 1. ARRUMANDO O HEADER */
+    /* 2. FIXANDO O HEADER INTEIRO NO TOPO */
     header {
-       
-        flex-direction: column;   /* Empilha Logo, Menu e Botão verticalmente */
-        gap: 15px;
-        padding: 15px 10px;
-        text-align: center;
-        height: auto;             /* Garante que o fundo acompanhe o tamanho dos itens */
+        position: fixed;          /* Fixa a barra inteira no topo */
+        top: 0;
+        left: 0;
+        width: 100%;              /* Ocupa toda a largura da tela */
+        z-index: 1000;            /* Fica por cima de todo o conteúdo ao rolar */
+        background-color: #ffffff; /* Fundo branco para os links não sumirem ao rolar */
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra leve para destacar */
         
+        display: flex;
+        flex-direction: column;   /* Mantém Logo, Links e Botão empilhados */
+        gap: 10px;
+        padding: 12px;
+        text-align: center;
+        height: auto;             /* Ajusta a altura conforme o conteúdo */
     }
 
+    /* Ajustando o alinhamento dos links (Início, Cardápio, etc.) */
     header nav {
         display: flex;
-        flex-wrap: wrap;          /* Se os links forem grandes, eles quebram linha suavemente */
+        flex-wrap: wrap;          
         justify-content: center;
-        gap: 12px;
+        gap: 15px;
     }
 
+    /* Estilizando os links para garantir que fiquem visíveis */
+    header nav a {
+        color: #333333;           /* Altere para a cor que preferir para os links */
+        text-decoration: none;
+        font-weight: 500;
+        font-size: 15px;
+    }
+
+    /* AJUSTANDO O BOTÃO "PEÇA AGORA" DO HEADER */
     header .btn {
-         position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 1000;
-    
-        width: 100%;              /* Botão "Peça Agora" ocupa a largura inteira no celular */
-        max-width: 100px;
-        background-color: #ffffff
+        position: static;         /* Remove o fixed individual que quebrou o layout */
+        width: auto;              /* Não ocupa a tela inteira */
+        display: inline-block;    /* Permite controlar o tamanho corretamente */
+        margin: 5px auto 0 auto;  /* Centraliza o botão horizontalmente */
+        padding: 8px 20px;        /* Deixa o botão com tamanho confortável e elegante */
+        font-size: 14px;
+        max-width: 180px;         /* Limita para ele não ficar gigante */
     }
 
-    /* 2. ARRUMANDO A SEÇÃO HERO (TEXTO + IMAGEM DO INÍCIO) */
+    /* 3. EVITANDO QUE O CONTEÚDO SUMA ATRÁS DO HEADER FIXO */
+    .hero-wrapper {
+        margin-top: 150px !important; /* Empurra o topo do site para baixo do menu fixo */
+    }
+
+    /* 4. SEÇÃO HERO (TEXTO + IMAGEM) */
     .hero {
         display: flex;
-        flex-direction: column-reverse; /* Inverte a ordem: a Imagem fica em cima e o texto embaixo */
+        flex-direction: column-reverse; 
         align-items: center;
         text-align: center;
         padding: 20px 15px;
         gap: 25px;
     }
 
-    /* Forçando a imagem a aparecer e ser totalmente responsiva */
     .hero img {
-        display: block !important; /* Garante que nenhuma regra oculte a imagem */
-        width: 100% !important;    /* Ocupa a largura disponível no celular */
-        max-width: 320px !important; /* Limita o tamanho máximo para não distorcer */
-        height: auto !important;   /* Mantém a proporção correta sem achatar o hambúrguer */
-        border-radius: 20px;       /* Mantém as bordas arredondadas bonitas da sua foto */
+        display: block !important; 
+        width: 100% !important;    
+        max-width: 320px !important; 
+        height: auto !important;   
+        border-radius: 20px;       
         margin: 0 auto;
     }
 
-    /* Ajustando os textos do topo */
     .hero h1 {
-        font-size: 28px;           /* Diminui o título para caber na tela do celular */
+        font-size: 26px;           
         line-height: 1.2;
         margin-bottom: 10px;
     }
@@ -335,10 +345,9 @@ footer .copy{
         padding: 0 10px;
     }
 
-    /* Botões "Ver Cardápio" e "WhatsApp" */
     .hero-buttons {
         display: flex;
-        flex-direction: column;    /* Empilha os dois botões no celular */
+        flex-direction: column;    
         width: 100%;
         gap: 10px;
         align-items: center;
@@ -347,13 +356,12 @@ footer .copy{
 
     .hero-buttons .btn {
         width: 100%;
-        max-width: 280px;          /* Deixa os botões com tamanhos idênticos e fáceis de clicar */
+        max-width: 280px;          
         text-align: center;
     }
 
-    /* Ajustando as estatísticas (+500 Clientes, 4.9, etc) */
     .hero-stats {
-        flex-direction: column;    /* Empilha as informações de entrega e avaliação */
+        flex-direction: column;    
         gap: 15px;
         align-items: center;
         padding: 0;
@@ -364,14 +372,11 @@ footer .copy{
         text-align: center;
     }
 
-    /* Remove aquela div que você usou como separador estático no HTML */
     .hero-stats div {
         display: none; 
     }
 
-    
-
-
+    /* 5. SEÇÃO DO CARDÁPIO */
     .menu-grid, .itens-cardapio {
         display: flex;
         flex-direction: column;
@@ -379,23 +384,16 @@ footer .copy{
         gap: 20px;
     }
 
-    /* 3. Ajuste dos Cards de Hambúrguer */
     .card-item {
-        width: 100%;       /* O card ocupa quase toda a largura da tela */
-        max-width: 350px;  /* Evita que ele estique demais em telas levemente maiores */
+        width: 100%;       
+        max-width: 350px;  
     }
 
-    /* 4. Imagens Responsivas */
     .card-item img {
         width: 100%;
-        height: auto;      /* Mantém a proporção da foto do hambúrguer */
+        height: auto;      
     }
 
-    /* 5. Tipografia (Fontes) */
-    h1 {
-        font-size: 24px;   /* Diminui o título principal para não quebrar linhas bizarramente */
-    }
-    
     h2 {
         font-size: 20px;
     }
