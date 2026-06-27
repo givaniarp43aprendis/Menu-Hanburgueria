@@ -276,16 +276,13 @@ footer .copy{
     
     /* 1. ARRUMANDO O HEADER */
     header {
-        position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
+       
         flex-direction: column;   /* Empilha Logo, Menu e Botão verticalmente */
         gap: 15px;
         padding: 15px 10px;
         text-align: center;
         height: auto;             /* Garante que o fundo acompanhe o tamanho dos itens */
-        z-index: 1000;
+        
     }
 
     header nav {
@@ -296,6 +293,11 @@ footer .copy{
     }
 
     header .btn {
+         position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    
         width: 100%;              /* Botão "Peça Agora" ocupa a largura inteira no celular */
         max-width: 250px;
     }
