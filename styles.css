@@ -273,7 +273,6 @@ footer .copy{
     
 
 
-@media (max-width: 768px) {
     
     /* 1. ARRUMANDO O HEADER */
     header {
@@ -361,7 +360,7 @@ footer .copy{
     .hero-stats div {
         display: none; 
     }
-}
+
     
 
 
